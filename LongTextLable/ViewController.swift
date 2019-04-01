@@ -38,14 +38,16 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let indexpath = NSIndexPath(row: sender.tag, section: 0)
         let cell = self.tblView!.cellForRow(at: indexpath as IndexPath) as? ViewTableViewCell
         
-        if(cell!.fixedHeightCon.priority == UILayoutPriority(rawValue: 999.0)){
+        if(cell!.fixedHeightCon.priority == UILayoutPriority(rawValue: 750)){
+            cell!.btnMore.setTitle("Show Less", for: UIControl.State.normal)
             cell!.fixedHeightCon.priority = UILayoutPriority(rawValue: 250)
-            cell!.graterHeightCon.priority = UILayoutPriority(rawValue: 999.0)
+            cell!.graterHeightCon.priority = UILayoutPriority(rawValue: 750)
             
             
             
         }else{
-            cell!.fixedHeightCon.priority = UILayoutPriority(rawValue: 999.0)
+            cell!.btnMore.setTitle("Read More", for: UIControl.State.normal)
+            cell!.fixedHeightCon.priority = UILayoutPriority(rawValue: 750)
             cell!.graterHeightCon.priority = UILayoutPriority(rawValue: 250)
             
         }
